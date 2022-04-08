@@ -1,3 +1,19 @@
+Struggled for a while figuring out how to bring your own model and leverage a custom script. 
+
+### The use case: 
+
+We had pre-trained models that we wanted to spin up as sage maker endpoints.   Our existing deployment handled some data transformation and we had multiple model objects to account for pre-processing and predicting. 
+
+Ideally we wanted to be able to package all model artifacts outside of sage maker so that we could easily deploy through terraform. 
+
+### The challenge\question:
+How to deploy a model agnostic sage maker endpoint wrapped in custom code that imports external dependencies using an off the shelf sage maker docker image.  
+
+
+Providing the solution we came up with below but interested in better approaches for handling this!
+
+
+
 ## Packaging your Code
 
 We are able to package model objects into a .tar.gz and access this file from s3. When a model is created \ deployed this s3 location will be referenced. 
